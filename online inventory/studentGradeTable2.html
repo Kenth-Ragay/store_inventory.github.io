@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Student Grades</title>
+</head>
+<style type="text/css">
+	table{
+		font-size: 30px;
+		border: solid;
+	}
+	table,tr,td,th{
+		border: solid;	
+	}
+	input{
+		font-size: 30px;
+	}
+</style>
+<body>
+	<table>
+		<thead>
+			<th>No.</th>
+			<th>Name</th>
+			<th>Year Level</th>
+			<th>Year Description</th>
+			<th>Grade %</th>
+			<th>NORSU Grade</th>
+			<th>Grade Remarks</th>
+		</thead>
+		<tbody>
+			<!-- JUST COPY AND PASTE THE CODE WITHIN TO INCREASE THE NUMBER OF STUDENTS -->
+			<tr>
+				<td>1</td>	
+				<td><input type="text" name="studentName[]" placeholder="Put Some Student Name"></td>
+				<td><input type="number" name="studentYear[]" placeholder="Year Level" max=10 id='yearLevel' oninput="describeYear(this.value,1)"></td>	
+				<td><span id='YearLevelDescription1'></span></td>	
+				<td><input type="number" name="studentGrade[]" placeholder="Grade" min=0 max=100 id='studentGrade' oninput="determineRemarks(this.value,1);determineNorsuGrade(this.value,1)"></td>	
+				<td><span id='NorsuGrade1'></span></td>	
+				<td><span id='GradeRemarks1'></span></td>	
+			</tr>
+			<!-- JUST COPY AND PASTE THE CODE WITHIN TO INCREASE THE NUMBER OF STUDENTS -->
+			<!-- NOTE TO HANDLE MULTIPLE INPUTS AND MAP THEM ACCORDNING TO THEIR ROWS LOOK AT THE ID ON THE SPANS -->
+			<!-- COMPARE IT TO THE GIVEN -->
+			<tr>
+				<td>2</td>	
+				<td><input type="text" name="studentName[]" placeholder="Put Some Student Name"></td>
+				<td><input type="number" name="studentYear[]" placeholder="Year Level" max=10 id='yearLevel' oninput="describeYear(this.value,2)"></td>	
+				<td><span id='YearLevelDescription2'></span></td>	
+				<td><input type="number" name="studentGrade[]" placeholder="Grade" min=0 max=100 id='studentGrade' oninput="determineRemarks(this.value,2);determineNorsuGrade(this.value,2)"></td>	
+				<td><span id='NorsuGrade2'></span></td>	
+				<td><span id='GradeRemarks2'></span></td>	
+			</tr>
+			<tr>
+				<td>3</td>	
+				<td><input type="text" name="studentName[]" placeholder="Put Some Student Name"></td>
+				<td><input type="number" name="studentYear[]" placeholder="Year Level" max=10 id='yearLevel' oninput="describeYear(this.value,3)"></td>	
+				<td><span id='YearLevelDescription3'></span></td>	
+				<td><input type="number" name="studentGrade[]" placeholder="Grade" min=0 max=100 id='studentGrade'oninput="determineRemarks(this.value,3);determineNorsuGrade(this.value,3)"></td>	
+				<td><span id='NorsuGrade3'></span></td>	
+				<td><span id='GradeRemarks3'></span></td>	
+			</tr>
+
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		
+		function describeYear(year,row=""){
+
+			//look at the 2nd Paramenter -> row,
+			//row here serves as a pointer as to which row you are operating
+			//row variable's relevance is shown below
+
+			switch(year){
+				case '1':
+					document.getElementById('YearLevelDescription'+row).innerText = "Freshman";
+				break;
+				case '2':
+					document.getElementById('YearLevelDescription'+row).innerText = "Sophomore";
+				break;
+				case '3':
+					document.getElementById('YearLevelDescription'+row).innerText = "Junior";
+				break;
+				case '4':
+					document.getElementById('YearLevelDescription'+row).innerText = "Senior";
+				break;
+
+				default:
+					document.getElementById('YearLevelDescription'+row).innerText = "Some Student";
+				break;
+
+				//NOTE: Notice the 'YearLevelDescription' is concatenated (+) with row variable to map or point to the correct span
+				//in this case the <span> with the id=YearLevelDescription.
+				//Example: if the row is 1, so the YearLevelDescription of reference is YearLevelDescription1
+			}
+		}
+
+			//Study the how this function operates.
+			//This will be relevant on our next Quiz.
+
+			function determineRemarks(grade,row=""){
+				if(grade >=75){
+				document.getElementById('GradeRemarks'+row).innerHTML = "PASSED";
+				}
+				else if(grade!=''){
+				document.getElementById('GradeRemarks'+row).innerHTML = "FAILED";
+				}
+				else{
+				document.getElementById('GradeRemarks'+row).innerHTML = "";
+				}
+			}
+			function determineNorsuGrade(grade,row=""){
+
+			if(grade>=95){
+				document.getElementById('NorsuGrade'+row).innerText = "1.00";
+			}
+			else if(grade==94){
+				document.getElementById('NorsuGrade'+row).innerText = "1.10";
+			}
+			else if(grade==93){
+				document.getElementById('NorsuGrade'+row).innerText = "1.20";
+			}
+			else{
+				document.getElementById('NorsuGrade'+row).innerText = "";	
+			}
+			}
+					
+
+	</script>
+</body>
+</html>

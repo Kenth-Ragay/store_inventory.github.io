@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Records</title>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <h1>GINA'S STORE</h1>
+        <span id="input" class="material-symbols-outlined">menu</span>
+    </nav>
+
+<!-- container to display items -->
+<div class="option">
+    <button class="toggle-button">Add Item</button>
+</div>
+
+
+<!-- container for computation -->
+    <div class="computation">
+        <div class="output">
+            <table id="output">
+                <tr>
+                    <th>Product</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Capital</th>
+                    <th>Price</th>                  
+                    <th>Total Sale</th>
+                    <th>profit</th>
+                    <th>remove</th>
+                </tr>
+
+            </table>
+        </div>       
+    </div>
+
+    <div class="form">
+            <form id="form">
+                <h2>Add Item</h2>
+                <input type="text" id="Name" placeholder="Name" required>
+                <input type="number" id="unit1" placeholder="Price per Bag" required>
+                <input type="number" id="unit2" placeholder="Price per piece" required>
+                <input type="number" id="unit3" placeholder="Price per kilo" required>
+                <input type="number" id="increase1" placeholder="incease per Bag" required>
+                <input type="number" id="increase2" placeholder="incease per piece" required>
+                <input type="number" id="increase3" placeholder="incease per Kilo" required>
+                <button type="submit" id="submit"  value="submit">Submit</button>
+            </form>
+        <button class="close"><span class="material-symbols-outlined">close</span></button> 
+
+    </div>
+   
+
+    <script src="main.js"></script>
+</body>
+</html>
