@@ -1,0 +1,157 @@
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+    }
+
+
+    .nav-bar{
+        position: absolute;
+        background-color: #2C74B3;
+        width: 100%;
+        height: 10vh;
+    }
+    /* navigation bar area */
+    .nav-bar h1{
+        display: flex;
+        justify-content: center;
+        color: antiquewhite;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .nav-bar span{
+        position: fixed;
+        display: flexbox;
+        top: 0;
+        right: 0;
+        margin: 20px;
+        cursor: pointer;
+        color: white;
+    }
+
+
+    .toggle-button{
+        width: 100%;
+        height: 50px;
+        font-size: 15px;
+        background: none;
+        color: white;
+        border: solid white 1px;
+        cursor: pointer;
+    }
+    .toggle-button:hover{
+        background: white;
+        color: black;
+        border: solid 2px black;
+    }
+    /* form */
+    .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 0vh;
+        visibility: hidden;
+        transition: 0.4s;
+    }
+
+    .form.active{
+        height: 100vh;
+        visibility: visible;
+    }
+
+
+
+    .form form{
+        background-color: #0c1a29;
+        position: fixed;
+        height: 40vh;
+        width: 60vh;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .form input, button{
+        margin: 10px;
+    }
+    .form button{
+        /* border-radius: 5px; */
+        width: 26.5vh;
+    }
+    .form h2{
+        text-align: center;
+        color: white;
+    }
+    /* form end */
+
+    /* computation area */
+    .computation{
+        position: absolute;
+        display: grid;
+        right: 0;
+        background-color: #144272;
+        width: 100%;
+        height: 90vh;
+        top: 10%;
+    }
+    /* output */
+    table{
+        background-color: #fff;
+        width: 100%;
+    }
+    table tr th,td{
+        /* border: solid 1px black; */
+        font-family: monospace;
+        text-align: center;
+        /* padding: 10px; */
+        /* height: 10px; */
+    }
+    
+    input,select{
+        border-bottom: solid 1px black;
+        text-align: center;
+        font-family: monospace;
+        font-size: 15px;
+        border: solid 1px white;
+    }
+
+    input:hover ,select:hover{
+        border: solid 1px black;
+        cursor: pointer;
+    }
+
+    #remove{
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+
+
+
+/* option area */
+.option{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    top: 6%;
+    right: -50.6%;
+    height: 50%;
+    width: 20%;
+    margin-right: 20px;
+    background-color: #0c1a29;
+    border-radius: 10px;
+    transition: 1s;
+    z-index: 9999;
+}
+
+.option.active{
+    right: 0;
+}
